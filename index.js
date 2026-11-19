@@ -41,7 +41,7 @@ app.post('/api/chat', async (req, res) => {
         const texto = mensajeUsuario.toLowerCase();
         let respuestaBot = "";
 
-        // 3. Diccionarios de palabras clave (más naturalidad)
+        // 3. Diccionarios de palabras clave
         const esSaludo = ['hola', 'buenas', 'qué tal', 'que tal', 'saludos', 'hey'].some(p => texto.includes(p));
         const esDespedida = ['adiós', 'adios', 'chao', 'nos vemos', 'hasta luego', 'bye'].some(p => texto.includes(p));
         const esGracias = ['gracias', 'genial', 'perfecto', 'ok', 'vale', 'listo'].some(p => texto.includes(p));
