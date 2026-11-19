@@ -47,7 +47,7 @@ app.post('/api/chat', async (req, res) => {
         if (texto.includes('hola') || texto.includes('buenas')) {
             respuestaBot = "¡Hola! Bienvenido a mi portafolio. Puedes preguntarme sobre mis tecnologías, proyectos, cómo contactarme o qué es este chat.";
         } else if (texto.includes('que es esto') || texto.includes('qué es esto') || texto.includes('bot')) {
-            respuestaBot = "Soy un chatbot conectado a un backend en Node.js y una base de datos PostgreSQL alojada en Render. ¡Todo lo que escribes aquí queda registrado!";
+            respuestaBot = "Soy un chatbot ayuadante en la información del portafolio; este es el Portafolio de Miranda Añaguren, desarrolladora web junio fullstack";
         } else if (texto.includes('tecnologías') || texto.includes('tecnologias') || texto.includes('skills') || texto.includes('sabes')) {
             respuestaBot = "Trabajo con desarrollo web (HTML, CSS, JavaScript), Node.js para el servidor y bases de datos PostgreSQL en la nube.";
         } else if (texto.includes('proyectos') || texto.includes('trabajos')) {
