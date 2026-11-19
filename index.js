@@ -58,7 +58,7 @@ app.post('/api/chat', async (req, res) => {
         } else if (esGracias) {
             respuestaBot = "¡De nada! Aquí estoy si necesitas saber algo más sobre mi perfil. 😊";
         } else if (preguntaBot) {
-            respuestaBot = "Soy un asistente virtual creado en Node.js. 🤖 Mi trabajo es responder tus dudas y guardar tus mensajes en mi base de datos PostgreSQL.";
+            respuestaBot = "Soy un asistente virtual.  Mi trabajo es responder tus dudas y guardar tus mensajes en la base de datos";
         } else if (preguntaTecnologias) {
             respuestaBot = "Me especializo en desarrollo web. Manejo HTML, CSS, JavaScript en el frontend, y Node.js con bases de datos SQL en el backend. 💻";
         } else if (preguntaProyectos) {
