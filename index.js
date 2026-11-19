@@ -41,7 +41,20 @@ app.post('/api/chat', async (req, res) => {
         await pool.query('INSERT INTO mensajes_chat (mensaje) VALUES ($1)', [mensajeUsuario]);
 
         // 2. Pensar en una respuesta
-        let respuestaBot = "¡Hola! He guardado tu mensaje en mi base de datos. Te contactaré pronto.";
+        const texto = mensajeUsuario.toLowerCase();
+        let respuestaBot = "¡Gracias por escribir! He guardado tu mensaje en mi base de datos de PostgreSQL para revisarlo pronto.";
+
+        if (texto.includes('hola') || texto.includes('buenas')) {
+            respuestaBot = "¡Hola! Bienvenido a mi portafolio. Puedes preguntarme sobre mis tecnologías, proyectos, cómo contactarme o qué es este chat.";
+        } else if (texto.includes('que es esto') || texto.includes('qué es esto') || texto.includes('bot')) {
+            respuestaBot = "Soy un chatbot conectado a un backend en Node.js y una base de datos PostgreSQL alojada en Render. ¡Todo lo que escribes aquí queda registrado!";
+        } else if (texto.includes('tecnologías') || texto.includes('tecnologias') || texto.includes('skills') || texto.includes('sabes')) {
+            respuestaBot = "Trabajo con desarrollo web (HTML, CSS, JavaScript), Node.js para el servidor y bases de datos PostgreSQL en la nube.";
+        } else if (texto.includes('proyectos') || texto.includes('trabajos')) {
+            respuestaBot = "Puedes explorar mis proyectos principales directamente en esta página. Este mismo asistente es uno de mis desarrollos full-stack.";
+        } else if (texto.includes('contacto') || texto.includes('correo') || texto.includes('contratar')) {
+            respuestaBot = "Déjame tu correo o número aquí mismo y se guardará automáticamente en mi base de datos para escribirte.";
+        }
         
         // Si el visitante pregunta algo específico, el bot cambia su respuesta:
         if (mensajeUsuario.toLowerCase().includes('tecnologías')) {
