@@ -42,14 +42,14 @@ app.post('/api/chat', async (req, res) => {
 
         // 2. Pensar en una respuesta
         const texto = mensajeUsuario.toLowerCase();
-        let respuestaBot = "¡Gracias por escribir! He guardado tu mensaje en mi base de datos de PostgreSQL para revisarlo pronto.";
+        let respuestaBot = "¡Gracias por escribir! He guardado tu mensaje en mi base de datos para revisarlo pronto.";
 
         if (texto.includes('hola') || texto.includes('buenas')) {
             respuestaBot = "¡Hola! Bienvenido a mi portafolio. Puedes preguntarme sobre mis tecnologías, proyectos, cómo contactarme o qué es este chat.";
         } else if (texto.includes('que es esto') || texto.includes('qué es esto') || texto.includes('bot')) {
-            respuestaBot = "Soy un chatbot ayuadante en la información del portafolio; este es el Portafolio de Miranda Añaguren, desarrolladora web junio fullstack";
+            respuestaBot = "Soy un chatbot ayuadante en la información del portafolio; este es el Portafolio de Miranda Añanguren, desarrolladora web junior Full-Stack";
         } else if (texto.includes('tecnologías') || texto.includes('tecnologias') || texto.includes('skills') || texto.includes('sabes')) {
-            respuestaBot = "Trabajo con desarrollo web (HTML, CSS, JavaScript), Node.js para el servidor y bases de datos PostgreSQL en la nube.";
+            respuestaBot = "Trabajo con desarrollo web (HTML, CSS, JavaScript), Node.js para el servidor y bases de datos PostgreSQL.";
         } else if (texto.includes('proyectos') || texto.includes('trabajos')) {
             respuestaBot = "Puedes explorar mis proyectos principales directamente en esta página. Este mismo asistente es uno de mis desarrollos full-stack.";
         } else if (texto.includes('contacto') || texto.includes('correo') || texto.includes('contratar')) {
@@ -58,7 +58,7 @@ app.post('/api/chat', async (req, res) => {
         
         // Si el visitante pregunta algo específico, el bot cambia su respuesta:
         if (mensajeUsuario.toLowerCase().includes('tecnologías')) {
-            respuestaBot = "Soy un bot creado con Node.js y conectado a PostgreSQL en Render.";
+            respuestaBot = "Soy un bot creado para dar información del Portafolio.";
         }
 
         // 3. Enviar la respuesta de vuelta al portafolio
